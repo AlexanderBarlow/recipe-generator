@@ -1,9 +1,15 @@
 body {
-    background-color: #5A5A5A;
+    background-color: #8000ff;
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
     justify-content: center;
     align-self: center;
+    background: linear-gradient(
+    90deg,
+    rgb(174, 182, 69) 0%,
+    rgb(224, 11, 100) 100%
+  );
+  min-height: 100vh;
 }
 
 #container {
@@ -12,6 +18,7 @@ min-width: 400px;
 min-height: 600px;
 align-self: center;
 border-radius: 5%;
+border: 2px solid #00ffff;
 }
 
 .row {
