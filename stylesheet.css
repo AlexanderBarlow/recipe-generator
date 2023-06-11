@@ -13,9 +13,13 @@ body {
 }
 
 #container {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-flow: row wrap;
   background-color: aliceblue;
-  min-width: 400px;
-  min-height: 600px;
+  width: 400px;
+  height: fit-content;
   align-self: center;
   border-radius: 5%;
   border: 2px solid #00ffff;
@@ -27,6 +31,9 @@ padding: 2%;
 }
 
 .row {
+  flex: 0 0 100%;
+
   min-width: fit-content;
-  padding: 5%;
+  padding: 2%;
+  margin: 2%;
 }
