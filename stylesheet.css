@@ -6,8 +6,8 @@ body {
   align-self: center;
   background: linear-gradient(
     90deg,
-    rgb(174, 182, 69) 0%,
-    rgb(224, 11, 100) 100%
+    rgb(80, 83, 102) 0%,
+    rgb(211, 216, 214) 100%
   );
   min-height: 100vh;
 }
@@ -19,6 +19,11 @@ body {
   align-self: center;
   border-radius: 5%;
   border: 2px solid #00ffff;
+  box-shadow: 10px 10px 10px  #000 ;
+}
+
+form {
+padding: 2%;
 }
 
 .row {
