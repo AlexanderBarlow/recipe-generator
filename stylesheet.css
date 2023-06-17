@@ -12,6 +12,14 @@ body {
   min-height: 100vh;
 }
 
+.show {
+  display: block
+}
+
+.hide {
+  display: none;
+}
+
 #container {
   display: flex;
   justify-content: center;
@@ -38,6 +46,4 @@ padding: 2%;
   margin: 2%;
 }
 
-.hide {
-  display: none;
-}
+
