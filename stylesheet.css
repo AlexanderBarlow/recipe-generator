@@ -13,11 +13,12 @@ body {
 }
 
 .show {
-  display: block
+  display: flex;
+  flex: 0 0 0 100%;
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 #container {
@@ -31,11 +32,11 @@ body {
   align-self: center;
   border-radius: 5%;
   border: 2px solid #00ffff;
-  box-shadow: 10px 10px 10px  #000 ;
+  box-shadow: 10px 10px 10px #000;
 }
 
 form {
-padding: 2%;
+  padding: 2%;
 }
 
 .row {
@@ -46,4 +47,27 @@ padding: 2%;
   margin: 2%;
 }
 
+.card {
+  background-color: #fff;
+  padding: 5%;
+  border-radius: 3% 3%;
+}
 
+#resultContainer {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-flow: row wrap;
+  background-color: aliceblue;
+  max-width: fit-content;
+  max-height: fit-content;
+  align-self: center;
+  border-radius: 5%;
+  border: 2px solid #00ffff;
+  box-shadow: 10px 10px 10px #000;
+}
+
+.result {
+  padding: 2%;
+  border: 2px solid #000;
+}

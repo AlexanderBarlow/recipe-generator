@@ -1,33 +1,24 @@
-const show = document.querySelectorAll('.show')
-const hide = document.querySelectorAll('.hide')
-const form = document.querySelector('#container')
-const submitBtn = document.querySelector('#submit')
-const resultForm = document.getElementById('results')
+const show = document.querySelectorAll(".show");
+const hide = document.querySelectorAll(".hide");
+const form = document.querySelector("#container");
+const submitBtn = document.querySelector("#submit");
 
+const resultContainer = document.getElementById("resultContainer");
 
-
-form.addEventListener('submit', Submit) 
+form.addEventListener("submit", Submit);
 
 function Submit() {
+  event.preventDefault();
 
-    event.preventDefault()
+  console.log("button hit");
+  console.log(form.classList.contains("show"));
 
-    console.log('button hit');
-    console.log(form.classList.contains('show'));
+  if (form.classList.contains("show")) {
+    console.log("if");
 
-    if (form.classList.contains('show')) {
-
-        console.log('if');
-
-        form.classList.remove('show')
-        form.classList.add('hide')
-        resultForm.classList.remove('hide')
-        resultForm.classList.add('show')
-    }
-
-
-
-
-
+    form.classList.remove("show");
+    form.classList.add("hide");
+    resultContainer.classList.remove("hide");
+    resultContainer.classList.add("show");
+  }
 }
-
