@@ -12,6 +12,7 @@ const submitBtn = document.querySelector("#submit");
 const resultContainer = document.getElementById("resultContainer");
 
 form.addEventListener("submit", Submit);
+form.addEventListener("submit", getRecipes);
 
 function Submit() {
 
@@ -53,17 +54,42 @@ const lowFat = document.getElementById('fat');
 }
 
 function getRecipes() {
+  event.preventDefault();
+  
+  const recipeSheet = document.querySelector('#recipe');
+  const recipeName = document.querySelector('#recipeName');
+
+  const apiId = 'd3e3671d';
+  const apiKey = 'df874e873413260268ab781defe839ab';
+  const cuisineInput = document.getElementById('cuisine').value;
+  const recipeApi = 'https://api.edamam.com/api/recipes/v2?type=public&q=' + cuisineInput + '&app_id=' + apiId + '&app_key=' + apiKey + '%09&diet=high-protein';
+  
     
-    // fetch(reviewApiTitle).then(function (response) {
-    //     response.json().then(function (data) {
-    //       if (data.results.length === 0) {
-    //         var movieError = document.createElement("p");
-    //         movieError.classList.add("title-text");
-    //         movieError.textContent =
-    //           "Sorry friend!  It looks like we are having trouble finding your       movie!  Please try another movie.";
-    //         movieInfo.append(movieError);
-    //         return;
-    //       }
+    fetch(recipeApi)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) { 
+      if (data.length === 0) {
+        alert('Not a valid cuisine!')
+        return
+      }
+
+      // recipeName.textContent = data.hits[0].recipe.recipeName;
+      recipeName.textContent = data.hits[0].recipe.label;
+      
+      
+      for (let i = 0; i < data.hits[0].recipe.ingredientLines.length; i++){
+
+        const recipeList = document.createElement('li')
+        recipeList.textContent = data.hits[0].recipe.ingredientLines[i]
+
+        recipeSheet.append(recipeList)
+      }
+      
+     
+    });
+
 
     // FETCH DATA BASED OFF CUISINE INPUT, DIET TYPE AND MACRO SELECTION
 
