@@ -58,11 +58,17 @@ function getRecipes() {
   
   const recipeSheet = document.querySelector('#recipe');
   const recipeName = document.querySelector('#recipeName');
+  const highProtein = document.getElementById('protein').value;
+  const lowCarb = document.getElementById('carb').value;
+  const lowFat = document.getElementById('fat').value;
+  const imgContainer = document.querySelector('#img')
 
   const apiId = 'd3e3671d';
   const apiKey = 'df874e873413260268ab781defe839ab';
   const cuisineInput = document.getElementById('cuisine').value;
-  const recipeApi = 'https://api.edamam.com/api/recipes/v2?type=public&q=' + cuisineInput + '&app_id=' + apiId + '&app_key=' + apiKey + '%09&diet=high-protein';
+
+//need to conditionally call the macro parameters if they are selected through if statements and different versions of the fetch requested
+  const recipeApi = 'https://api.edamam.com/api/recipes/v2?type=public&q=' + cuisineInput + '&app_id=' + apiId + '&app_key=' + apiKey + '%09&diet=' + lowFat;
   
     
     fetch(recipeApi)
@@ -77,6 +83,11 @@ function getRecipes() {
 
       // recipeName.textContent = data.hits[0].recipe.recipeName;
       recipeName.textContent = data.hits[0].recipe.label;
+
+      const recipeImage = document.createElement('img')
+      recipeImage.src=  data.hits[0].recipe.image;
+      imgContainer.append(recipeImage);
+      
       
       
       for (let i = 0; i < data.hits[0].recipe.ingredientLines.length; i++){
