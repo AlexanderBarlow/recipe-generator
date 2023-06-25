@@ -73,42 +73,57 @@ function getRecipes() {
 //run .checked logic on check boxes and use coordinated fetches
 //could possibly use switch case
 
-if ( highProtein.checked === true && lowCarb.checked === true && lowFat.checked === true){
+if ( highProtein.checked === true ){
 
-  recipeApi = recipeApi + lowFat.value + '&' + lowCarb.value + '&' + highProtein.value;
+  recipeApi = recipeApi + highProtein.value + '&';
 
-  fetch(recipeApi)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) { 
-    if (data.length === 0) {
-      alert('Not a valid cuisine!')
-      return
-    }
+}
 
-    // recipeName.textContent = data.hits[0].recipe.recipeName;
-    recipeName.textContent = data.hits[0].recipe.label;
+if ( lowCarb.checked === true) {
 
-    const recipeImage = document.createElement('img')
-    recipeImage.src=  data.hits[0].recipe.image;
-    imgContainer.append(recipeImage);
-    
-    
-    
-    for (let i = 0; i < data.hits[0].recipe.ingredientLines.length; i++){
+  recipeApi = recipeApi + lowCarb.value + '&'
 
-      const recipeList = document.createElement('li')
-      recipeList.textContent = data.hits[0].recipe.ingredientLines[i]
+}
 
-      recipeSheet.append(recipeList)
-    }
-    
-   
-  });
+if ( lowFat.checked === true ) {
+  
+  recipeApi = recipeApi + lowFat.value + '&'
+
+}
+
+fetch(recipeApi)
+.then(function (response) {
+  return response.json();
+})
+.then(function (data) { 
+  if (data.length === 0) {
+    alert('Not a valid cuisine!')
+    return
+  }
+
+  // recipeName.textContent = data.hits[0].recipe.recipeName;
+  recipeName.textContent = data.hits[0].recipe.label;
+
+  const recipeImage = document.createElement('img')
+  recipeImage.src=  data.hits[0].recipe.image;
+  imgContainer.append(recipeImage);
+  
+  
+  
+  for (let i = 0; i < data.hits[0].recipe.ingredientLines.length; i++){
+
+    const recipeList = document.createElement('li')
+    recipeList.textContent = data.hits[0].recipe.ingredientLines[i]
+
+    recipeSheet.append(recipeList)
+  }
+  
+ 
+});
+
 
 }
 
 
 
-}
+
