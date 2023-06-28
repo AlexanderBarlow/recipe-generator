@@ -36,7 +36,7 @@ function getRecipes() {
   const highProtein = document.getElementById('protein');
   const lowCarb = document.getElementById('carb');
   const lowFat = document.getElementById('fat');
-  const imgContainer = document.querySelector('#img');
+  const recipeImage = document.querySelector('#img');
   const tags = document.querySelector('#tags');
   const dietType = document.querySelector('#diet').value
   let dietInput
@@ -109,9 +109,9 @@ fetch(recipeApi)
   // recipeName.textContent = data.hits[0].recipe.recipeName;
   recipeName.textContent = data.hits[0].recipe.label;
 
-  const recipeImage = document.createElement('img')
-  recipeImage.src=  data.hits[0].recipe.image;
-  imgContainer.append(recipeImage);
+  
+  recipeImage.src=  data.hits[0].recipe.images.THUMBNAIL.url;
+ 
   
   
   viewRecipe.addEventListener("click", viewRecipes);
