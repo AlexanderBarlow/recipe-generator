@@ -118,6 +118,12 @@ fetch(recipeApi)
 
   function viewRecipes() {
 
+    const tagsTitle = document.querySelector('#tagsTitle');
+
+    viewRecipe.classList.add('hide')
+    tags.classList.add('hide')
+    tagsTitle.classList.add('hide')
+
     const recipeSheet = document.querySelector('#recipe');
 
     recipeSheet.textContent = '';
