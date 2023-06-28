@@ -61,6 +61,11 @@ ul {
   margin: 2%;
 }
 
+#modal {
+  position: fixed;
+  top: 35%;
+}
+
 /* #resultContainer {
   display: flex;
   justify-content: center;
