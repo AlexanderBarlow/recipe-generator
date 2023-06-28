@@ -92,20 +92,7 @@
       </div>
     </form>
 
-    <!-- <div id="resultContainer" class="hide">
-      <div id="result1" class="result">
-        <div class="card text-center" id="img">
-
-          <div class="card-header" id="recipeName">Recipe Name</div>
-          <div class="card-body">
-            <h5 class="card-title">Recipe</h5>
-            <ul class="card-text" id="recipe">
-              
-            </ul>
-          </div>
-          <div class="card-footer text-muted" id="tags">(Tags)</div>
-        </div>
-      </div> -->
+   
       <div class="container hide" id="resultContainer">
       <img
         id="img" alt="picture of recipe"
@@ -119,7 +106,7 @@
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star checked"></span>
         </div>
-        <ul id="recipe">
+        <ul >
           Recipe will populate here!
         </ul>
         <div class="container__text__timing">
@@ -132,36 +119,23 @@
           view recipe <i class="fa fa-arrow-right"></i>
         </button>
       </div>
-    <!-- </div> -->
-      <!-- <div id="result2" class="result"> -->
-        <!-- <div class="card text-center">
-          <div class="card-header">Recipe Name 2</div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="modal fade hide" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Recipe List</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <ul id="recipe">
+
+              </ul>
+            </div>
           </div>
-          <div class="card-footer text-muted">2 days ago</div>
         </div>
       </div>
-      <div id="result3" class="result">
-        <div class="card text-center">
-          <div class="card-header">Recipe Name 2</div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-          <div class="card-footer text-muted">2 days ago</div>
-        </div>
-      </div>
-    </div> -->
 
     <script src="./index.js"></script>
   </body>

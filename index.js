@@ -6,9 +6,16 @@ const form = document.querySelector("#container");
 const submitBtn = document.querySelector("#submit");
 const resultContainer = document.getElementById("resultContainer");
 const viewRecipe = document.querySelector('#viewRecipe');
+const closeModal = document.querySelector('#modal')
 
 form.addEventListener("submit", Submit);
 form.addEventListener("submit", getRecipes);
+closeModal.addEventListener('click', () => {
+  closeModal.classList.add('hide')
+}
+);
+
+
 
 
 function Submit() {
@@ -118,11 +125,12 @@ fetch(recipeApi)
 
   function viewRecipes() {
 
+    const modal = document.querySelector('#modal')
     const tagsTitle = document.querySelector('#tagsTitle');
 
-    viewRecipe.classList.add('hide')
-    tags.classList.add('hide')
-    tagsTitle.classList.add('hide')
+    modal.classList.remove('hide')
+    modal.classList.add('show')
+  
 
     const recipeSheet = document.querySelector('#recipe');
 
