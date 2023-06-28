@@ -5,9 +5,11 @@ const hide = document.querySelectorAll(".hide");
 const form = document.querySelector("#container");
 const submitBtn = document.querySelector("#submit");
 const resultContainer = document.getElementById("resultContainer");
+const viewRecipe = document.querySelector('#viewRecipe');
 
 form.addEventListener("submit", Submit);
 form.addEventListener("submit", getRecipes);
+
 
 function Submit() {
 
@@ -27,6 +29,8 @@ function Submit() {
 function getRecipes() {
   event.preventDefault();
   
+  const apiId = 'd3e3671d';
+  const apiKey = 'df874e873413260268ab781defe839ab';
   const recipeSheet = document.querySelector('#recipe');
   const recipeName = document.querySelector('#recipeName');
   const highProtein = document.getElementById('protein');
@@ -62,8 +66,6 @@ if (newDiet.length > 1) {
 console.log(dietInput);
 
 
-  const apiId = 'd3e3671d';
-  const apiKey = 'df874e873413260268ab781defe839ab';
   const cuisineInput = document.getElementById('cuisine').value;
   let recipeApi = 'https://api.edamam.com/api/recipes/v2?type=public&q=' + cuisineInput + '&health=' + dietInput.toLowerCase() + '&app_id=' + apiId + '&app_key=' + apiKey + '%09&diet='
 
@@ -112,20 +114,34 @@ fetch(recipeApi)
   imgContainer.append(recipeImage);
   
   
+  viewRecipe.addEventListener("click", viewRecipes);
+
+  function viewRecipes() {
+
+    const recipeSheet = document.querySelector('#recipe');
+
+    recipeSheet.textContent = '';
   
-  for (let i = 0; i < data.hits[0].recipe.ingredientLines.length; i++){
-
-    const recipeList = document.createElement('li')
-    recipeList.textContent = data.hits[0].recipe.ingredientLines[i]
-
-    recipeSheet.append(recipeList)
+    for (let i = 0; i < data.hits[0].recipe.ingredientLines.length; i++){
+  
+      const recipeList = document.createElement('li')
+      recipeList.textContent = data.hits[0].recipe.ingredientLines[i]
+  
+      recipeSheet.append(recipeList)
+    }
+  
+  
   }
+
+
   
- 
+  
 });
 
 
 }
+
+
 
 
 

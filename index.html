@@ -8,6 +8,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap-grid.min.css"
     />
+    <link rel="stylesheet" href="index.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./stylesheet.css" />
     <title>Document</title>
   </head>
@@ -88,7 +95,7 @@
       </div>
     </form>
 
-    <div id="resultContainer" class="hide">
+    <!-- <div id="resultContainer" class="hide">
       <div id="result1" class="result">
         <div class="card text-center" id="img">
 
@@ -101,7 +108,34 @@
           </div>
           <div class="card-footer text-muted" id="tags">(Tags)</div>
         </div>
+      </div> -->
+      <div class="container hide" id="resultContainer">
+      <img
+        id="img"
+      />
+      <div class="container__text">
+        <h1 id="recipeName">Caramel Cake Pancakes</h1>
+        <div class="container__text__star">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <ul id="recipe">
+          Recipe will populate here!
+        </ul>
+        <div class="container__text__timing">
+          <div class="container__text__timing_time">
+            <h2>Health Awareness</h2>
+            <p id="tags"></p>
+          </div>
+        </div>
+        <button class="btn" id="viewRecipe">
+          view recipe <i class="fa fa-arrow-right"></i>
+        </button>
       </div>
+    <!-- </div> -->
       <!-- <div id="result2" class="result"> -->
         <!-- <div class="card text-center">
           <div class="card-header">Recipe Name 2</div>

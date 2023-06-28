@@ -53,7 +53,11 @@ form {
   border-radius: 3% 3%;
 }
 
-#resultContainer {
+ul {
+  list-style-type:circle;
+}
+
+/* #resultContainer {
   display: flex;
   justify-content: center;
   align-content: flex-start;
@@ -65,9 +69,9 @@ form {
   border-radius: 5%;
   border: 2px solid #00ffff;
   box-shadow: 10px 10px 10px #000;
-}
+} */
 
-.result {
+/* .result {
   padding: 2%;
   border: 2px solid #000;
-}
+} */
