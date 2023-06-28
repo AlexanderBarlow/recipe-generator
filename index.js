@@ -99,9 +99,9 @@ fetch(recipeApi)
   return response.json();
 })
 .then(function (data) { 
-  if (data.length === 0) {
+  if (data.count === 0) {
     alert('Sorry, there are no recipes for that.')
-    return
+    location.reload()
   }
 
   tags.textContent = data.hits[0].recipe.dietLabels
